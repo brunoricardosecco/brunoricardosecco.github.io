@@ -1,0 +1,1307 @@
+/* ==========================================================================
+   Resets
+   ========================================================================== */
+
+:root {
+
+    --corEscura: #cbcbcb;
+
+    --corClara: #f2f2f2;
+
+    --corFundo: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Remove anchor tex-decoration
+ */
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Remove list-style
+ */
+
+ol,
+ul {
+    list-style: none;
+}
+
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+a,
+em,
+img,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+article,
+footer,
+header,
+nav,
+section,
+main {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul {
+    font-size: 1em;
+    font-weight: normal;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+
+div {
+    border: 0px solid rgba(0, 0, 0, 0.7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Popups Divs
+   ========================================================================== */
+
+.title {
+
+    font-family: arial;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.average-text {
+
+    font-family: arial;
+    font-size: 1.1em;
+    font-weight: normal;
+}
+
+body,
+html {
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.close {
+
+    cursor: pointer;
+}
+
+.create {
+
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+a {
+
+    padding: 10px;
+}
+
+div.cover {
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    background-color: black;
+    opacity: 0.8;
+    display: none;
+}
+
+section.popup {
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.popup-item {
+
+
+    background-color: var(--corClara);
+    flex-grow: 0;
+    flex-basis: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    display: flex;
+    position: relative;
+    top: 0px;
+    align-items: stretch;
+}
+
+div.popup-item header {
+
+    padding: 20px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: var(--corEscura);
+    justify-content: space-between;
+    min-height: 64px;
+}
+
+div.separator {
+
+    height: 2px;
+    width: 80%;
+    flex-grow: 0;
+    background-color: var(--corEscura);
+    border-radius: 10px;
+    align-self: center;
+}
+
+div.separator-time {
+
+    height: 2px;
+    width: 80%;
+    flex-grow: 0;
+    background-color: var(--corEscura);
+    border-radius: 10px;
+    align-self: center;
+}
+
+div.popup-item section.confirm-btn {
+    display: flex;
+    justify-content: space-around;
+}
+
+div.popup-item section {
+
+    flex-grow: 1;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+
+
+section.time {
+    flex-direction: row;
+}
+
+section.data {
+    flex-direction: row;
+}
+
+section.confirm {
+    flex-direction: row;
+}
+
+div.popup-item li.reserva-box {
+
+    border-radius: 5px;
+
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+    margin-right: 10px;
+
+    margin-left: 10px;
+
+    margin-top: 20px;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+    min-height: 88px;
+
+    background-color: var(--corClara);
+
+    flex-grow: 0;
+
+    padding: 10px;
+
+    text-align: center;
+
+    font-size: 1.5em;
+
+    display: flex;
+
+    margin-bottom: 10px;
+}
+
+input.custom-input {
+
+    width: 100px !important;
+    height: 2rem !important;
+    font-size: 1em !important;
+    margin-left: 10px !important;
+    border-bottom: 1px solid var(--corEscura) !important;
+}
+
+span.strong {
+
+    font-weight: bold;
+}
+
+div.reserva-time {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom {
+
+    background-color: var(--corEscura);
+    color: black;
+}
+
+ul.reserva {
+
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.custom:hover {
+
+    background-color: var(--corClara);
+}
+
+.animation-popup {
+
+    animation: popup 0.3s ease;
+    animation-fill-mode: forwards;
+}
+
+
+.animation-cover {
+
+    animation: cover 0.3s ease;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes popup {
+
+    from {
+
+        opacity: 0;
+        top: -100px;
+    }
+    to {
+
+        opacity: 1;
+        top: 0px;
+    }
+}
+
+@keyframes cover {
+
+    from {
+
+        opacity: 0;
+    }
+    to {
+
+        opacity: 0.8;
+    }
+}
+
+
+@media only screen and (max-height:600px) {
+
+    ul.reserva {
+
+        max-height: 400px;
+        overflow-y: auto;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+
+    section.confirm {
+
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+
+    section.time {
+        flex-direction: column;
+        align-items: center;
+    }
+    section.data {
+        flex-direction: column;
+        align-items: center;
+    }
+    input.custom-input {
+        margin-top: 5px !important;
+    }
+    div.popup-item {
+        flex-basis: 90%;
+    }
+
+    div.popup-item li.reserva-box {
+
+        flex-wrap: wrap;
+        flex-direction: column;
+        min-height: 168px;
+    }
+    div.reserva-time {
+        flex-direction: row;
+    }
+
+    div.separator-time {
+        width: 10px;
+        margin-right: 2px;
+        margin-left: 2px;
+    }
+    .reserva-close {
+
+        align-self: flex-start;
+        order: -1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Header Reservas Div
+   ========================================================================== */
+
+.reservas-container {
+    max-width: 70%;
+    min-width: 320px;
+    margin: 0px auto;
+    position: relative;
+    margin-top: 3%;
+}
+
+@media (max-width: 800px) {
+    .reservas-container {
+        max-width: 100%;
+        margin: auto;
+    }
+}
+
+.reservas-header {
+    display: flex;
+    padding: 20px 5px 20px 5px;
+    margin: 0 auto 10px auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    background: #CCCCCC;
+}
+
+sup {
+    vertical-align: 10px;
+    margin-left: 5px;
+    color: #646464;
+}
+
+.reservas-data {
+    flex: 1;
+    line-height: 1.4;
+    margin-left: 5px;
+}
+
+.reservas-data h2 {
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+.reservas-sala {
+    position: relative;
+}
+
+.reservas-sala h2 {
+    flex: 1;
+    margin-left: 10px;
+    text-align: right;
+}
+
+i.medium.material-icons {
+    margin-left: 10px;
+    color: #5D5D5D;
+}
+
+.salas-sobrepor1 {
+    position: absolute;
+    left: -200px;
+    opacity: 1;
+    padding: 5px 15px;
+}
+
+.salas-sobrepor2 {
+    position: absolute;
+    left: -200px;
+    opacity: 0;
+    padding: 5px 15px;
+}
+
+.salas-sobrepor1 h2,
+.salas-sobrepor2 h2 {
+    font-size: 1.4em;
+    color: #000;
+    font-weight: bold;
+}
+
+@media (max-width: 980px) {
+    .salas-sobrepor1,
+    .salas-sobrepor2 {
+        left: 83px;
+    }
+
+    .reservas-header {
+        flex-direction: column;
+    }
+}
+
+.animation-animateDesap {
+    animation: animateDesap 1s ease;
+    animation-fill-mode: forwards;
+}
+
+.animation-animateAparec {
+    animation: animateAparec 1s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animateDesap {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes animateAparec {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.reservas-container-interno-data {
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+  Reservas Feitas Div
+   ========================================================================== */
+
+.reservas-bg {
+    position: relative;
+}
+
+.reservas-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.reservas-feitas {
+    display: flex;
+    width: 70%;
+    margin: 0 auto 5px auto;
+    background: #F2F2F2;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (max-width: 1200px) {
+    .reservas-feitas {
+        flex-direction: column;
+    }
+
+    div.reservas-feitas {
+        margin: 5px auto;
+    }
+
+    .reservas-empresa,
+    .reservas-email,
+    .reservas-tel {
+        margin-top: 10px;
+    }
+}
+
+div.reservas-feitas {
+    padding: 10px;
+}
+
+.reservas-email,
+.reservas-tel {
+    display: flex;
+}
+
+.reservas-email p,
+.reservas-tel p {
+    color: #000;
+}
+
+.reservas-empresa h2 {
+    font-weight: bold;
+}
+
+.reservas-adicionar {
+    margin: 10px;
+}
+
+
+@media screen and (orientation: landscape) and (max-width: 790px) {
+    html {
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        width: 100vh;
+        overflow-x: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    div.cover {
+        width: 100vh;
+        height: 100vw;
+    }
+
+    section.popup {
+        width: 100vh;
+        height: 100vw;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+  CALENDARIO
+   ========================================================================== */
+
+body,
+html {
+    height: 100%;
+}
+
+table {
+    border-collapse: separate;
+}
+
+td,
+th {
+    padding: 0;
+    text-align: center;
+    height: 100px;
+}
+
+div.wrap {
+    height: 90%;
+    overflow-x: hidden;
+}
+
+div.transition {
+
+    width: 200%;
+    display: flex;
+    flex-direction: row;
+}
+
+body {
+    overflow: hidden;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #dad7d7;
+}
+
+.content {
+    width: 50%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .scroll{
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+} */
+
+#calendario {
+    display: flex;
+    width: 50%;
+}
+
+.calendar-body {
+    text-align: center;
+    margin: 3% auto;
+    width: 70%;
+    background-color: #9b9b9b;
+    overflow: auto;
+}
+
+.calendar-body h2 {
+    font-size: 24px;
+}
+
+#diasc {
+    text-align: center;
+    background-color: #f4f4f4;
+    width: 100%;
+    box-shadow: 2px 2px 18px #888888;
+}
+
+#titulos {
+    font-size: 32px;
+    text-align: center;
+}
+
+#anterior,
+#posterior {
+    cursor: pointer;
+}
+
+.tabela td,
+.tabela th {
+    width: 48px;
+    height: 48px;
+}
+
+.border-text {
+    text-decoration: none;
+    color: black;
+}
+
+.border-text:hover {
+    background-color: #888888;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.other-month {
+    text-decoration: none;
+    color: #b8b8b8;
+}
+
+.dropdown-trigger {
+    background-color: #ce595d;
+}
+
+.nav-wrapper,
+.dropdown-trigger {
+    background-color: #dbdbdb;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    #calendario {
+        display: flex;
+        height: 100%;
+    }
+    .calendar-body {
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+        height: 95%;
+        background-color: #9b9b9b;
+        box-shadow: 2px 2px 18px #888888;
+        overflow: auto;
+    }
+    #diasc {
+        text-align: center;
+        background-color: #f4f4f4;
+        width: 100%;
+        height: 95%;
+        box-shadow: 2px 2px 18px #888888;
+    }
+    .calendar-body h2 {
+        font-size: 18px;
+    }
+
+    .z-depth-4 {
+        box-shadow: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #calendario {
+        display: flex;
+        height: 97%;
+    }
+    .calendar-body {
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+        height: 95%;
+        background-color: #9b9b9b;
+        box-shadow: 2px 2px 18px #888888;
+        overflow: auto;
+    }
+    #diasc {
+        text-align: center;
+        background-color: #f4f4f4;
+        width: 100%;
+        height: 95%;
+        box-shadow: 2px 2px 18px #888888;
+    }
+    .calendar-body h2 {
+        font-size: 18px;
+    }
+
+    .z-depth-4 {
+        box-shadow: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Popups Divs
+   ========================================================================== */
+
+.title {
+    font-family: arial;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.average-text {
+    font-family: arial;
+    font-size: 1.1em;
+    font-weight: normal;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.close {
+    cursor: pointer;
+}
+
+.create {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+div.cover {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 2;
+    background-color: black;
+    opacity: 0.8;
+    display: none;
+    top: 0;
+    left: 0;
+}
+
+section.popup {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+}
+
+div.popup-item {
+    background-color: var(--corClara);
+    flex-grow: 0;
+    flex-basis: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    display: flex;
+    position: relative;
+    top: 0px;
+    align-items: stretch;
+}
+
+div.popup-item header {
+    padding: 20px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: var(--corEscura);
+    justify-content: space-between;
+    min-height: 64px;
+}
+
+div.separator {
+    height: 2px;
+    width: 80%;
+    flex-grow: 0;
+    background-color: var(--corEscura);
+    border-radius: 10px;
+    align-self: center;
+}
+
+div.separator-time {
+    height: 2px;
+    width: 80%;
+    flex-grow: 0;
+    background-color: var(--corEscura);
+    border-radius: 10px;
+    align-self: center;
+}
+
+div.popup-item section.confirm-btn {
+    display: flex;
+    justify-content: space-around;
+}
+
+div.popup-item section {
+    flex-grow: 1;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+section.time {
+    flex-direction: row;
+}
+
+section.data {
+    flex-direction: row;
+}
+
+section.confirm {
+    flex-direction: row;
+}
+
+div.popup-item li.reserva-box {
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 20px;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 88px;
+    background-color: var(--corClara);
+    flex-grow: 0;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+input.custom-input {
+    width: 100px !important;
+    height: 2rem !important;
+    font-size: 1em !important;
+    margin-left: 10px !important;
+    border-bottom: 1px solid var(--corEscura) !important;
+}
+
+span.strong {
+    font-weight: bold;
+}
+
+div.reserva-time {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom {
+    background-color: var(--corEscura);
+    color: black;
+}
+
+ul.reserva {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.custom:hover {
+    background-color: var(--corClara);
+}
+
+.animation-popup {
+    animation: popup 0.3s ease;
+    animation-fill-mode: forwards;
+}
+
+.animation-cover {
+    animation: cover 0.3s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes popup {
+    from {
+        opacity: 0;
+        top: -100px;
+    }
+    to {
+        opacity: 1;
+        top: 0px;
+    }
+}
+
+@keyframes cover {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.8;
+    }
+}
+
+@media only screen and (max-height:600px) {
+    ul.reserva {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    section.confirm {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    section.time {
+        flex-direction: column;
+        align-items: center;
+    }
+    section.data {
+        flex-direction: column;
+        align-items: center;
+    }
+    input.custom-input {
+        margin-top: 5px !important;
+    }
+    div.popup-item {
+        flex-basis: 90%;
+    }
+    div.popup-item li.reserva-box {
+        flex-wrap: wrap;
+        flex-direction: column;
+        min-height: 168px;
+    }
+    div.reserva-time {
+        flex-direction: row;
+    }
+    div.separator-time {
+        width: 10px;
+        margin-right: 2px;
+        margin-left: 2px;
+    }
+    .reserva-close {
+        align-self: flex-start;
+        order: -1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Login
+   ========================================================================== */
+
+   .login-container {
+    max-width: 70%;
+    min-width: 320px;
+    margin: 0px auto;
+    position: relative;
+    margin-top: 3%;
+    background-color: var(--corFundo);
+    padding-top: 0px;
+    border-radius: 3px;
+    display: flex;
+    
+}
+
+.login-header {
+    padding: 20px;
+    background-color: var(--corEscura);
+}
+
+#loginButton {
+    margin: 20px auto;
+    align-content: center;
+}
+
+.input-field {
+    margin: 20px;
+}

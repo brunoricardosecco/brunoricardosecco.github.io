@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize-css/materialize.css" media="screen,projection" />
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">Reservas</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">Meus Dados</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">Sair</a></li>
+    </ul>
+    <nav>
+        <div class="nav-wrapper">
+            <ul class="right hide-on-med-and-down">
+                <!-- Dropdown Trigger -->
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Empresa<i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- ========================================================================== 
+  CALENDARIO 
+  ==========================================================================-->
+    <div id="wrap" class="wrap">
+        <div class="transition">
+            <div id="calendario">
+                <div class="calendar-body z-depth-4">
+                    <h2 id="year"></h2>
+                    <h2 id="today">'+datetoday+'</h2>
+                    <table id="diasc">
+                        <tr>
+                            <th>
+                                <div id="anterior" onclick="mesantes()"><i class="Small material-icons">chevron_left</i></div>
+                            </th>
+                            <th colspan="5">
+                                <h3 id="titulos"></h3></th>
+                            <th>
+                                <div id="posterior" onclick="mesdespues()"><i class="Small material-icons">chevron_right</i></div>
+                            </th>
+                        </tr>
+                        <tr class="tabela" id="fila0">
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr class="tabela" id="fila1">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="tabela" id="fila2">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="tabela" id="fila3">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="tabela" id="fila4">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="tabela" id="fila5">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="tabela" id="fila6">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- ========================================================================== 
+            RESERVAS
+            ==========================================================================-->
+            <div class="content" id="content">
+                <div class="reservas-container z-depth-4">
+                    <div class="reservas-header">
+                        <div class="reservas-container-interno-data">
+                            <a href="#" class="valign-wrapper">
+                                <div id="reservasSeta" class="reservas-seta ">
+                                    <i class="medium material-icons">chevron_left</i>
+                                </div>
+                            </a>
+                            <div class="reservas-data valign-wrapper">
+                                <h2><sup>2018</sup>Segunda-Feira, 16 de Julho</h2>
+                            </div>
+                        </div>
+                        <div class="reservas-sala valign-wrapper">
+                            <a class="valign-wrapper" id="trocaSalaBtn">
+                                <div class="salas-sobrepor1" id="nome_sala">
+                                    <h2>Sala de Reuniões</h2>
+                                </div>
+                                <div class="salas-sobrepor2" id="nome_sala2">
+                                    <h2>Sala de Negócios</h2>
+                                </div>
+                                <i class="medium material-icons">unfold_more</i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="reservas-bg">
+                        <div class="reservas-info">
+                            <div class="reservas-feitas center valign-wrapper z-depth-2">
+                                <div class="horario horario-inicio">
+                                    <p>09:00</p>
+                                </div>
+                                <div class="divisor-hora">
+                                    <p>-</p>
+                                </div>
+                                <div class="horario horario-termino">
+                                    <p>10:00</p>
+                                </div>
+                                <div class="reservas-empresa">
+                                    <h2>Empresa</h2>
+                                </div>
+                                <div class="reservas-email">
+                                    <i class="small material-icons valign-wrapper">email</i>
+                                    <a>
+                                        <p>Email-Empresa</p>
+                                    </a>
+                                </div>
+                                <div class="reservas-tel">
+                                    <i class="small material-icons valign-wrapper">call</i>
+                                    <a>
+                                        <p>Telefone-empresa</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="reservas-feitas center valign-wrapper z-depth-2">
+                                <div class="horario horario-inicio">
+                                    <p>09:00</p>
+                                </div>
+                                <div class="divisor-hora">
+                                    <p>-</p>
+                                </div>
+                                <div class="horario horario-termino">
+                                    <p>10:00</p>
+                                </div>
+                                <div class="reservas-empresa">
+                                    <h2>Unect Jr.</h2>
+                                </div>
+                                <div class="reservas-email">
+                                    <i class="small material-icons valign-wrapper">email</i>
+                                    <a href="email: teste@teste.com">
+                                        <p>brunodvic3@hotmail.com</p>
+                                    </a>
+                                </div>
+                                <div class="reservas-tel">
+                                    <i class="small material-icons valign-wrapper">call</i>
+                                    <a href="tel:+552199999999">
+                                        <p>(43)996718583</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="reservas-adicionar">
+                                <a id="adicionarReservas" class="btn-floating right btn-large grey pulse">
+                                <i class="material-icons">add</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================================================================== 
+  POPUP
+  ==========================================================================-->
+    <div id="cover" class="cover animation-cover"></div>
+    <section id="popupReservar" class="popup" style="display: none;">
+        <div class="popup-item animation-popup">
+            <header>
+                <i id="popupReservarClose" class="material-icons close">close</i>
+                <h1 class="title">Reservar Horário</h1>
+                <div></div>
+            </header>
+            <section class="data">
+                <p class="title">Segunda Feira,&nbsp</p>
+                <p class="title">16 de Julho</p>
+            </section>
+            <div class="separator"></div>
+            <section>
+                <p class="average-text">Sala de Reuniões</p>
+            </section>
+            <section class="time">
+                <p>Horário de Início: </p>
+                <input type="time" class="custom-input" value="00:00">
+            </section>
+            <section class="time">
+                <p>Horário de Término: </p>
+                <input type="time" class="custom-input" value="00:00">
+            </section>
+            <section>
+                <a id="reservarBt" class="waves-effect waves-light btn custom">Reservar</a>
+            </section>
+        </div>
+    </section>
+    <section id="popupConfirm" class="popup" style="display: none;">
+        <div class="popup-item animation-popup">
+            <header>
+                <i id="popupConfirmClose" class="material-icons close">close</i>
+                <h1 class="title">Reservar Horário</h1>
+                <div></div>
+            </header>
+            <section>
+                <p class="title">Deseja reservar esse horário ?</p>
+            </section>
+            <div class="separator"></div>
+            <section class="data confirm">
+                <p>Segunda-Feira,&nbsp</p>
+                <p>16 de Julho,&nbsp</p>
+                <p>Sala de Reuniões.</p>
+            </section>
+            <section>
+                <p> Das
+                    <span class="strong">13:00</span> as
+                    <span class="strong">14:00</span> horas.</p>
+            </section>
+            <section class="confirm-btn">
+                <div></div>
+                <a id="reservarVoltarBt" class="waves-effect waves-light btn custom">Voltar</a>
+                <a id="reservarConfirmBt" class="waves-effect waves-light btn custom">Reservar</a>
+                <div></div>
+            </section>
+        </div>
+    </section>
+    <section id="popupLiberar" class="popup" style="display: none;">
+        <div class="popup-item animation-popup">
+            <header>
+                <i id="popupLiberarClose" class="material-icons close">close</i>
+                <h1 class="title">Liberar Horário</h1>
+                <div></div>
+            </header>
+            <section>
+                <p class="title">Deseja liberar esse horário ?</p>
+            </section>
+            <div class="separator"></div>
+            <section class="data confirm">
+                <p>Segunda-Feira,&nbsp</p>
+                <p>16 de Julho,&nbsp</p>
+                <p>Sala de Reuniões.</p>
+            </section>
+            <section>
+                <p> Das
+                    <span class="strong">13:00</span> as
+                    <span class="strong">14:00</span> horas.</p>
+            </section>
+            <section class="confirm-btn">
+                <div></div>
+                <a id="liberarVoltarBt" class="waves-effect waves-light btn custom">Voltar</a>
+                <a id="liberarConfirmBt" class="waves-effect waves-light btn custom">Liberar</a>
+                <div></div>
+            </section>
+        </div>
+    </section>
+    <section id="popupDados" class="popup" style="display: none;">
+        <div class="popup-item animation-popup">
+            <header>
+                <i id="popupDadosClose" class="material-icons close">close</i>
+                <h1 class="title">UnectJr - Meus Dados</h1>
+                <div></div>
+            </header>
+            <section>
+                <p>Email: unectjr@unecjr.com.br
+                    <i class="material-icons create">create</i>
+                </p>
+            </section>
+            <section>
+                <p>Telefone: (11)98562636
+                    <i class="material-icons create">create</i>
+                </p>
+            </section>
+            <section>
+                <a id="salvarBt" class="waves-effect waves-light btn custom">Salvar Alterações</a>
+            </section>
+        </div>
+    </section>
+    <section id="popupMinhasReservas" class="popup" style="display: none;">
+        <div class="popup-item animation-popup ">
+            <header>
+                <i id="popupMinhasReservasClose" class="material-icons close">close</i>
+                <h1 class="title">UnectJr - Minhas Reservas</h1>
+                <div></div>
+            </header>
+            <ul class="reserva">
+                <li class="reserva-box">
+                    <div class="reserva-time">
+                        <p>09:00</p>
+                        <div class="separator-time"></div>
+                        <p>10:00</p>
+                    </div>
+                    <p>
+                        <span class="strong">UnecjtJr</span>
+                    </p>
+                    <p>Sala de Reuniões</p>
+                    <p>16 de Julho</p>
+                    <i id="liberarReservaBt" class="material-icons close reserva-close">close</i>
+                </li>
+                <li class="reserva-box">
+                    <div class="reserva-time">
+                        <p>09:00</p>
+                        <div class="separator-time"></div>
+                        <p>10:00</p>
+                    </div>
+                    <p>
+                        <span class="strong">UnecjtJr</span>
+                    </p>
+                    <p>Sala de Reuniões</p>
+                    <p>16 de Julho</p>
+                    <i class="material-icons close reserva-close">close</i>
+                </li>
+                <li class="reserva-box">
+                    <div class="reserva-time">
+                        <p>09:00</p>
+                        <div class="separator-time"></div>
+                        <p>10:00</p>
+                    </div>
+                    <p>
+                        <span class="strong">UnecjtJr</span>
+                    </p>
+                    <p>Sala de Reuniões</p>
+                    <p>16 de Julho</p>
+                    <i class="material-icons close reserva-close">close</i>
+                </li>
+                <li class="reserva-box">
+                    <div class="reserva-time">
+                        <p>09:00</p>
+                        <div class="separator-time"></div>
+                        <p>10:00</p>
+                    </div>
+                    <p>
+                        <span class="strong">UnecjtJr</span>
+                    </p>
+                    <p>Sala de Reuniões</p>
+                    <p>16 de Julho</p>
+                    <i class="material-icons close reserva-close">close</i>
+                </li>
+                <li class="reserva-box">
+                    <div class="reserva-time">
+                        <p>09:00</p>
+                        <div class="separator-time"></div>
+                        <p>10:00</p>
+                    </div>
+                    <p>
+                        <span class="strong">UnecjtJr</span>
+                    </p>
+                    <p>Sala de Reuniões</p>
+                    <p>16 de Julho</p>
+                    <i class="material-icons close reserva-close">close</i>
+                </li>
+                <li class="reserva-box">
+                    <div class="reserva-time">
+                        <p>09:00</p>
+                        <div class="separator-time"></div>
+                        <p>10:00</p>
+                    </div>
+                    <p>
+                        <span class="strong">UnecjtJr</span>
+                    </p>
+                    <p>Sala de Reuniões</p>
+                    <p>16 de Julho</p>
+                    <i class="material-icons close reserva-close">close</i>
+                </li>
+                <li class="reserva-box">
+                    <div class="reserva-time">
+                        <p>09:00</p>
+                        <div class="separator-time"></div>
+                        <p>10:00</p>
+                    </div>
+                    <p>
+                        <span class="strong">UnecjtJr</span>
+                    </p>
+                    <p>Sala de Reuniões</p>
+                    <p>16 de Julho</p>
+                    <i class="material-icons close reserva-close">close</i>
+                </li>
+                <li class="reserva-box">
+                    <div class="reserva-time">
+                        <p>09:00</p>
+                        <div class="separator-time"></div>
+                        <p>10:00</p>
+                    </div>
+                    <p>
+                        <span class="strong">UnecjtJr</span>
+                    </p>
+                    <p>Sala de Reuniões</p>
+                    <p>16 de Julho</p>
+                    <i class="material-icons close reserva-close">close</i>
+                </li>
+                <li class="reserva-box">
+                    <div class="reserva-time">
+                        <p>09:00</p>
+                        <div class="separator-time"></div>
+                        <p>10:00</p>
+                    </div>
+                    <p>
+                        <span class="strong">UnecjtJr</span>
+                    </p>
+                    <p>Sala de Reuniões</p>
+                    <p>16 de Julho</p>
+                    <i class="material-icons close reserva-close">close</i>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize-js/materialize.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
