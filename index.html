@@ -16,201 +16,234 @@
 </head>
 
 <body>
-    <!-- Dropdown Structure -->
-    <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">Reservas</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">Meus Dados</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">Sair</a></li>
-    </ul>
-    <nav>
-        <div class="nav-wrapper">
-            <ul class="right hide-on-med-and-down">
-                <!-- Dropdown Trigger -->
-                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Empresa<i class="material-icons right">arrow_drop_down</i></a></li>
-            </ul>
+    <div id="loginBox" class="login-container z-depth-2">
+        <div class="login-header valign-wrapper">
+            <p>Sistema de Reservas - Incubadora UTFPR</p>
         </div>
-    </nav>
-    <!-- ========================================================================== 
+        <div class="input-container">
+            <div class="input-field">
+                <input id="emailLogin" type="email" class="validate">
+                <label for="emailLogin">Email</label>
+            </div>
+            <div class="input-field">
+                <input id="senhaLogin" type="password" class="validate">
+                <label for="senhaLogin">Senha</label>
+            </div>
+            <p class="lembrarSenha">Esqueceu sua senha?<a href="#">clique aqui!</a></p>
+            <a id="loginButton" class="waves-effect waves-light btn-large grey">Login</a>
+        </div>
+    </div>
+    <main id="mainContent">
+        <header class="header">
+            <!-- Dropdown Structure -->
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a id="cadastrarEmpresa">Cadastrar</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">Reservas</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">Meus Dados</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">Sair</a></li>
+            </ul>
+            <nav>
+                <div class="nav-wrapper">
+                    <ul class="right">
+                        <!-- Dropdown Trigger -->
+                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Empresa<i class="material-icons right">arrow_drop_down</i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ========================================================================== 
   CALENDARIO 
   ==========================================================================-->
-    <div id="wrap" class="wrap">
-        <div class="transition">
-            <div id="calendario">
-                <div class="calendar-body z-depth-4">
-                    <h2 id="year"></h2>
-                    <h2 id="today">'+datetoday+'</h2>
-                    <table id="diasc">
-                        <tr>
-                            <th>
-                                <div id="anterior" onclick="mesantes()"><i class="Small material-icons">chevron_left</i></div>
-                            </th>
-                            <th colspan="5">
-                                <h3 id="titulos"></h3></th>
-                            <th>
-                                <div id="posterior" onclick="mesdespues()"><i class="Small material-icons">chevron_right</i></div>
-                            </th>
-                        </tr>
-                        <tr class="tabela" id="fila0">
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                        <tr class="tabela" id="fila1">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr class="tabela" id="fila2">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr class="tabela" id="fila3">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr class="tabela" id="fila4">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr class="tabela" id="fila5">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr class="tabela" id="fila6">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <!-- ========================================================================== 
-            RESERVAS
-            ==========================================================================-->
-            <div class="content" id="content">
-                <div class="reservas-container z-depth-4">
-                    <div class="reservas-header">
-                        <div class="reservas-container-interno-data">
-                            <a href="#" class="valign-wrapper">
-                                <div id="reservasSeta" class="reservas-seta ">
-                                    <i class="medium material-icons">chevron_left</i>
-                                </div>
-                            </a>
-                            <div class="reservas-data valign-wrapper">
-                                <h2><sup>2018</sup>Segunda-Feira, 16 de Julho</h2>
-                            </div>
+        <div id="wrap" class="wrap">
+            <div class="transition">
+                <div id="calendario">
+                    <div class="calendar-body z-depth-2">
+                        <div class="calendario-header">
+                            <h2 id="year"></h2>
+                            <h2 id="today">'+datetoday+'</h2>
                         </div>
-                        <div class="reservas-sala valign-wrapper">
-                            <a class="valign-wrapper" id="trocaSalaBtn">
-                                <div class="salas-sobrepor1" id="nome_sala">
-                                    <h2>Sala de Reuniões</h2>
-                                </div>
-                                <div class="salas-sobrepor2" id="nome_sala2">
-                                    <h2>Sala de Negócios</h2>
-                                </div>
-                                <i class="medium material-icons">unfold_more</i>
-                            </a>
+                        <div class="calendario-info">
+                            <table id="diasc">
+                                <tr>
+                                    <th>
+                                        <div id="anterior" onclick="mesantes()"><i class="Small material-icons">chevron_left</i></div>
+                                    </th>
+                                    <th colspan="5">
+                                        <h3 id="titulos"></h3></th>
+                                    <th>
+                                        <div id="posterior" onclick="mesdespues()"><i class="Small material-icons">chevron_right</i></div>
+                                    </th>
+                                </tr>
+                                <tr class="tabela" id="fila0">
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                <tr class="tabela" id="fila1">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="tabela" id="fila2">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="tabela" id="fila3">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="tabela" id="fila4">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="tabela" id="fila5">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="tabela" id="fila6">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
-                    <div class="reservas-bg">
-                        <div class="reservas-info">
-                            <div class="reservas-feitas center valign-wrapper z-depth-2">
-                                <div class="horario horario-inicio">
-                                    <p>09:00</p>
-                                </div>
-                                <div class="divisor-hora">
-                                    <p>-</p>
-                                </div>
-                                <div class="horario horario-termino">
-                                    <p>10:00</p>
-                                </div>
-                                <div class="reservas-empresa">
-                                    <h2>Empresa</h2>
-                                </div>
-                                <div class="reservas-email">
-                                    <i class="small material-icons valign-wrapper">email</i>
-                                    <a>
-                                        <p>Email-Empresa</p>
-                                    </a>
-                                </div>
-                                <div class="reservas-tel">
-                                    <i class="small material-icons valign-wrapper">call</i>
-                                    <a>
-                                        <p>Telefone-empresa</p>
-                                    </a>
+                </div>
+                <!-- ========================================================================== 
+            RESERVAS
+            ==========================================================================-->
+                <div class="content" id="content">
+                    <div class="reservas-container z-depth-2">
+                        <div class="reservas-header">
+                            <div class="reservas-container-interno-data">
+                                <a href="#" class="valign-wrapper">
+                                    <div id="reservasSeta" class="reservas-seta ">
+                                        <i class="medium material-icons">chevron_left</i>
+                                    </div>
+                                </a>
+                                <div class="reservas-data valign-wrapper">
+                                    <h2><sup>2018</sup>Segunda-Feira, 16 de Julho</h2>
                                 </div>
                             </div>
-                            <div class="reservas-feitas center valign-wrapper z-depth-2">
-                                <div class="horario horario-inicio">
-                                    <p>09:00</p>
-                                </div>
-                                <div class="divisor-hora">
-                                    <p>-</p>
-                                </div>
-                                <div class="horario horario-termino">
-                                    <p>10:00</p>
-                                </div>
-                                <div class="reservas-empresa">
-                                    <h2>Unect Jr.</h2>
-                                </div>
-                                <div class="reservas-email">
-                                    <i class="small material-icons valign-wrapper">email</i>
-                                    <a href="email: teste@teste.com">
-                                        <p>brunodvic3@hotmail.com</p>
-                                    </a>
-                                </div>
-                                <div class="reservas-tel">
-                                    <i class="small material-icons valign-wrapper">call</i>
-                                    <a href="tel:+552199999999">
-                                        <p>(43)996718583</p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="reservas-adicionar">
-                                <a id="adicionarReservas" class="btn-floating right btn-large grey pulse">
-                                <i class="material-icons">add</i>
+                            <div class="reservas-sala valign-wrapper">
+                                <a class="valign-wrapper" id="trocaSalaBtn">
+                                    <div class="salas-sobrepor1" id="nome_sala">
+                                        <h2>Sala de Reuniões</h2>
+                                    </div>
+                                    <div class="salas-sobrepor2" id="nome_sala2">
+                                        <h2>Sala de Negócios</h2>
+                                    </div>
+                                    <i class="medium material-icons">unfold_more</i>
                                 </a>
                             </div>
                         </div>
+                        <div class="reservas-bg">
+                            <div class="reservas-info">
+                                <ul>
+                                    <li>
+                                        <div class="reservas-feitas center valign-wrapper z-depth-2">
+                                            <div class="horario horario-inicio">
+                                                <p>09:00</p>
+                                            </div>
+                                            <div class="divisor-hora">
+                                                <p>-</p>
+                                            </div>
+                                            <div class="horario horario-termino">
+                                                <p>10:00</p>
+                                            </div>
+                                            <div class="reservas-empresa">
+                                                <h2>Empresa</h2>
+                                            </div>
+                                            <div class="reservas-email">
+                                                <i class="small material-icons valign-wrapper">email</i>
+                                                <a>
+                                                    <p>Email-Empresa</p>
+                                                </a>
+                                            </div>
+                                            <div class="reservas-tel">
+                                                <i class="small material-icons valign-wrapper">call</i>
+                                                <a>
+                                                    <p>Telefone-empresa</p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="reservas-feitas center valign-wrapper z-depth-2">
+                                            <div class="horario horario-inicio">
+                                                <p>09:00</p>
+                                            </div>
+                                            <div class="divisor-hora">
+                                                <p>-</p>
+                                            </div>
+                                            <div class="horario horario-termino">
+                                                <p>10:00</p>
+                                            </div>
+                                            <div class="reservas-empresa">
+                                                <h2>Unect Jr.</h2>
+                                            </div>
+                                            <div class="reservas-email">
+                                                <i class="small material-icons valign-wrapper">email</i>
+                                                <a href="email: teste@teste.com">
+                                                    <p>brunodvic3@hotmail.com</p>
+                                                </a>
+                                            </div>
+                                            <div class="reservas-tel">
+                                                <i class="small material-icons valign-wrapper">call</i>
+                                                <a href="tel:+552199999999">
+                                                    <p>(43)996718583</p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="reservas-adicionar">
+                                    <a id="adicionarReservas" class="btn-floating right btn-large grey pulse">
+                                <i class="material-icons">add</i>
+                                </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
     <!-- ========================================================================== 
   POPUP
   ==========================================================================-->
@@ -451,9 +484,36 @@
             </ul>
         </div>
     </section>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize-js/materialize.js"></script>
-    <script src="js/main.js"></script>
+    <!-- Popup Cadastro -->
+    <section id="popupCadastrar" class="popup" style="display: none;">
+        <div class="popup-item animation-popup">
+            <header>
+                <i id="popupCadastrarClose" class="material-icons close">close</i>
+                <h1 class="title">Cadastrar Empresa</h1>
+                <div></div>
+            </header>
+            <section class="time">
+                <p>Usuário: </p>
+                <input type="text" class="custom-input" value="" id="usuarioValue">
+            </section>
+            <section class="time">
+                <p>Senha: </p>
+                <input type="password" class="custom-input" value="" id="senhaValue">
+            </section>
+            <section class="time">
+                <p>Contato: </p>
+                <input type="text" class="custom-input" value="" id="contatoValue">
+            </section>
+            <section class="time">
+                <p>Telefone </p>
+                <input type="text" class="custom-input" value="" id="telefoneValue">
+            </section>
+            <section>
+                <a id="cadastrarBt" class="waves-effect waves-light btn custom">Cadastrar</a>
+            </section>
+            <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+            <script type="text/javascript" src="js/materialize-js/materialize.js"></script>
+            <script src="js/main.js"></script>
 </body>
 
 </html>

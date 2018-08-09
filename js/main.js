@@ -4,6 +4,10 @@
 
 var cover = document.getElementById('cover');
 
+var cadastrarEmpresa = document.getElementById('cadastrarEmpresa');
+
+var popupCadastrar = document.getElementById('popupCadastrar');
+
 var popupReservar = document.getElementById('popupReservar');
 
 var popupConfirm = document.getElementById('popupConfirm');
@@ -16,6 +20,8 @@ var popupMinhasReservas = document.getElementById('popupMinhasReservas');
 
 var popupReservarClose = document.getElementById('popupReservarClose');
 
+var popupCadastrarClose = document.getElementById('popupCadastrarClose');
+
 var popupConfirmClose = document.getElementById('popupConfirmClose');
 
 var popupLiberarClose = document.getElementById('popupLiberarClose');
@@ -25,6 +31,8 @@ var popupDadosClose = document.getElementById('popupDadosClose');
 var popupMinhasReservasClose = document.getElementById('popupMinhasReservasClose');
 
 var reservarBt = document.getElementById('reservarBt');
+
+var cadastrarBt = document.getElementById('cadastrarBt');
 
 var reservarVoltarBt = document.getElementById('reservarVoltarBt');
 
@@ -38,7 +46,9 @@ var salvarBt = document.getElementById('salvarBt');
 
 var liberarReservaBt = document.getElementById('liberarReservaBt');
 
-var popups = [popupReservar, popupConfirm, popupLiberar, popupDados, popupMinhasReservas];
+var loginButton = document.getElementById('loginButton');
+
+var popups = [popupReservar, popupConfirm, popupLiberar, popupDados, popupMinhasReservas, popupCadastrar];
 
 var troca = 0;
 
@@ -51,6 +61,10 @@ var nome_sala2 = document.getElementById("nome_sala2");
 var adicionarReservas = document.getElementById("adicionarReservas");
 
 var reservasSeta = document.getElementById('reservasSeta');
+
+var mainContent = document.getElementById('mainContent');
+
+var loginBox = document.getElementById('loginBox');
 
 $wrap = $('#wrap');
 
@@ -111,11 +125,36 @@ function openPopup(num) {
 
 }
 
+
+function login() {
+
+
+    loginBox.classList.add('animation-login');
+
+    setTimeout(function() {
+
+        loginBox.style.display = 'none';
+
+        mainContent.style.display = 'block';
+
+        mainContent.classList.add('animation-popup');
+
+    }, 300)
+
+}
+
+
 adicionarReservas.onclick = function() {
 
     openPopup(0);
 
 }
+
+cadastrarEmpresa.onclick = function() {
+
+    openPopup(5);
+}
+
 // Esse evento tem dar bind a cada li gerado posteriormente
 liberarReservaBt.onclick = function() {
 
@@ -150,6 +189,10 @@ reservarBt.onclick = function() {
 
 };
 
+cadastrarBt.onclick = function() {
+    closePopup(5);
+}
+
 reservarVoltarBt.onclick = function() {
 
     closePopup(1);
@@ -163,6 +206,8 @@ reservarConfirmBt.onclick = function() {
 
 }
 
+popupCadastrarClose.onclick = function() { closePopup(5) }
+
 popupReservarClose.onclick = function() { closePopup(0) };
 
 popupConfirmClose.onclick = function() { closePopup(1) };
@@ -174,6 +219,8 @@ popupDadosClose.onclick = function() { closePopup(3) };
 popupMinhasReservasClose.onclick = function() { closePopup(4) };
 
 reservasSeta.onclick = function() { $wrap.animate({ scrollLeft: -($wrap.width()) }, 400); }
+
+loginButton.onclick = function() { login(); };
 
 
 

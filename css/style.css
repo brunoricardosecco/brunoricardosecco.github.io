@@ -35,6 +35,12 @@
 
 
 
+
+
+
+
+
+
 /**
  * Remove anchor tex-decoration
  */
@@ -43,6 +49,12 @@ a {
     text-decoration: none;
     cursor: pointer;
 }
+
+
+
+
+
+
 
 
 
@@ -159,6 +171,12 @@ div {
 
 
 
+
+
+
+
+
+
 /* ==========================================================================
    Popups Divs
    ========================================================================== */
@@ -183,6 +201,14 @@ html {
     width: 100%;
     height: 100%;
     margin: 0;
+}
+
+main {
+
+    display: none;
+    position: relative;
+    top: 0px;
+    opacity: 1;
 }
 
 .close {
@@ -492,6 +518,12 @@ ul.reserva {
 
 
 
+
+
+
+
+
+
 /* ==========================================================================
    Header Reservas Div
    ========================================================================== */
@@ -502,6 +534,7 @@ ul.reserva {
     margin: 0px auto;
     position: relative;
     margin-top: 3%;
+    border-radius: 3px;
 }
 
 @media (max-width: 800px) {
@@ -640,6 +673,12 @@ i.medium.material-icons {
 
 
 
+
+
+
+
+
+
 /* ==========================================================================
   Reservas Feitas Div
    ========================================================================== */
@@ -748,6 +787,12 @@ div.reservas-feitas {
 
 
 
+
+
+
+
+
+
 /* ==========================================================================
   CALENDARIO
    ========================================================================== */
@@ -808,23 +853,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* .scroll{
     scroll-behavior: smooth;
     overflow-y: scroll;
@@ -833,14 +861,31 @@ body {
 #calendario {
     display: flex;
     width: 50%;
+    min-width: 300px;
+}
+
+.calendario-header {
+    height: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--corEscura);
+    min-width: 300px;
+}
+
+div.calendario-header h2 {
+    font-size: 1.4em;
+    font-weight: bold;
 }
 
 .calendar-body {
     text-align: center;
     margin: 3% auto;
     width: 70%;
-    background-color: #9b9b9b;
+    background-color: var(--corClara);
     overflow: auto;
+    min-width: 300px;
+    border-radius: 0 0 3px 3px;
 }
 
 .calendar-body h2 {
@@ -849,14 +894,14 @@ body {
 
 #diasc {
     text-align: center;
-    background-color: #f4f4f4;
+    background-color: var(--corFundo);
     width: 100%;
-    box-shadow: 2px 2px 18px #888888;
 }
 
 #titulos {
-    font-size: 32px;
+    font-size: 1.4em;
     text-align: center;
+    font-weight: bold;
 }
 
 #anterior,
@@ -876,8 +921,8 @@ body {
 }
 
 .border-text:hover {
-    background-color: #888888;
-    border-radius: 50%;
+    font-size: 1.4em;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -886,13 +931,16 @@ body {
     color: #b8b8b8;
 }
 
-.dropdown-trigger {
-    background-color: #ce595d;
-}
-
 .nav-wrapper,
 .dropdown-trigger {
-    background-color: #dbdbdb;
+    background-color: var(--corClara);
+    color: #000;
+    font-weight: bold;
+    width: 100%;
+}
+
+.header {
+    min-width: 300px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
@@ -923,6 +971,10 @@ body {
     .z-depth-4 {
         box-shadow: none;
     }
+
+    /*.header {
+        display: none;
+    }*/
 }
 
 @media only screen and (max-width: 767px) {
@@ -953,7 +1005,17 @@ body {
     .z-depth-4 {
         box-shadow: none;
     }
+
+    /*.header {
+        display: none;
+    }*/
 }
+
+
+
+
+
+
 
 
 
@@ -1165,7 +1227,14 @@ ul.reserva {
     animation-fill-mode: forwards;
 }
 
+.animation-login {
+
+    animation: login 0.3s ease;
+    animation-fill-mode: forwards;
+}
+
 @keyframes popup {
+
     from {
         opacity: 0;
         top: -100px;
@@ -1173,6 +1242,20 @@ ul.reserva {
     to {
         opacity: 1;
         top: 0px;
+    }
+}
+
+@keyframes login {
+
+    from {
+
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+
+        transform: scale(0.5);
+        opacity: 0;
     }
 }
 
@@ -1238,63 +1321,39 @@ ul.reserva {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ==========================================================================
    Login
    ========================================================================== */
 
-   .login-container {
-    max-width: 70%;
+.login-container {
     min-width: 320px;
-    margin: 0px auto;
+    max-width: 70%;
+    margin: 0 auto;
     position: relative;
     margin-top: 3%;
     background-color: var(--corFundo);
     padding-top: 0px;
     border-radius: 3px;
+}
+
+.input-container {
     display: flex;
-    
+    flex-direction: column;
 }
 
 .login-header {
-    padding: 20px;
+    height: 125px;
     background-color: var(--corEscura);
+}
+
+.login-header p {
+    font-weight: bold;
+    font-size: 1.4em;
+    margin: 0 auto;
+}
+
+.lembrarSenha {
+    margin-left: 10px;
 }
 
 #loginButton {
@@ -1303,5 +1362,23 @@ ul.reserva {
 }
 
 .input-field {
-    margin: 20px;
+    margin: 15px 10px 0 10px;
+}
+
+.lembrarSenha {
+    padding-top: 10px;
+}
+
+@media only screen and (max-width: 980px) {
+    .login-container {
+        max-width: 100%;
+    }
+
+    .input-container {
+        margin-top: 10%;
+    }
+
+    .z-depth-2 {
+        box-shadow: none;
+    }
 }
